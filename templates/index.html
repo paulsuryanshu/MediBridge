@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MediBridge</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Capture.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav id="navbar">
+            <div class="center-logo">
+                <a href="#home" aria-label="Go to home page" class="company-name">
+                    <img src="{{ url_for('static', filename='images/Capture.ico') }}" alt="MediBridge Logo" class="logo">
+                    <span>MediBridge</span>
+                </a>
+            </div>
+            <ul class="right-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section Pop-Up -->
+    <div id="hero-popup" class="hero-popup">
+        <div class="hero-content">
+            <span class="close-btn" onclick="closeHero()" aria-label="Close hero section">✖</span>
+            <h1>Join Us in Transforming Rural Healthcare with AI Diagnostics</h1>
+            <p>Empowering rural areas with accessible, accurate healthcare diagnostics.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="image-slider">
+        <div class="slide active">
+            <img src="{{ url_for('static', filename='images/1.png') }}" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/2.png') }}" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="{{ url_for('static', filename='images/3.png') }}" alt="Slide 3">
+        </div>
+        <!-- Arrows for navigation -->
+        <a class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Section with Images -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <a href="{{ url_for('cardiovascular') }}">
+                        <img src="{{ url_for('static', filename='images/img1.jpg') }}" alt="Cardiovascular Health">
+                        <h3>Cardiovascular Health</h3>
+                        <p>Advanced AI-driven diagnostics to monitor and manage cardiovascular conditions remotely.</p>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="{{ url_for('respiratory') }}">
+                        <img src="{{ url_for('static', filename='images/img2.avif') }}" alt="Respiratory Health">
+                        <h3>Respiratory Health</h3>
+                        <p>AI-powered tools for detecting and managing respiratory diseases such as asthma and COPD.</p>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="{{ url_for('diabetes') }}">
+                        <img src="{{ url_for('static', filename='images/img3.avif') }}" alt="Diabetes Management">
+                        <h3>Diabetes Management</h3>
+                        <p>Continuous monitoring and AI-driven analytics for personalized diabetes care.</p>
+                    </a>
+                </article>
+                <article class="service-card">
+                    <a href="{{ url_for('mentalillness') }}">
+                        <img src="{{ url_for('static', filename='images/img4.avif') }}" alt="Mental Health">
+                        <h3>Mental Health</h3>
+                        <p>AI-powered assessments to help with early detection and management of mental health conditions.</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Us Section with Image -->
+        <section id="about">
+            <h2>About Us</h2>
+            <img src="{{ url_for('static', filename='images/img7.png') }}" alt="About Us" aria-hidden="true">
+            <p>We are revolutionizing healthcare access in rural areas through advanced AI diagnostics. Our mission is to provide quality healthcare services even in the most underserved areas.</p>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-slider">
+                <p id="testimonial-text">This service has transformed healthcare in my rural community.</p>
+                <h4 id="testimonial-author">- Dr. A</h4>
+                <button onclick="prevTestimonial()" aria-label="Previous testimonial">←</button>
+                <button onclick="nextTestimonial()" aria-label="Next testimonial">→</button>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form" aria-labelledby="contact">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" aria-label="name" required>
+                <span id="nameError" class="error" aria-live="polite"></span>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" aria-label="email" required>
+                <span id="emailError" class="error" aria-live="polite"></span>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" aria-label="message" required></textarea>
+                <span id="messageError" class="error" aria-live="polite"></span>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 AI-Powered Remote Diagnostics for Rural Healthcare</p>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/4.jpeg') }}" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/5.svg') }}" alt="Twitter">
+                </a>
+                <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/6.png') }}" alt="LinkedIn">
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="right-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Optional Back to Top Button -->
+        <div class="back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

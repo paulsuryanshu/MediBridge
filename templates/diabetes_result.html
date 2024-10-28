@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MediBridge - Diabetes Prediction</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Capture.ico') }}">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='diabetes.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav id="navbar">
+            <div class="center-logo">
+                <a href="#home" aria-label="Go to home page" class="company-name">
+                    <img src="{{ url_for('static', filename='images/Capture.ico') }}" alt="MediBridge Logo" class="logo">
+                    <span>MediBridge</span>
+                </a>
+            </div>
+            <ul class="right-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <!-- Prediction Summary Section -->
+        <section aria-labelledby="result-summary" class="mt-4 text-center">
+            <h2 id="result-summary">Diabetes Prediction Summary</h2>
+            <p>The patient is: <strong class="text-success">{{ result }}</strong></p>
+            <p>Predicted probability of having diabetes: <strong>{{ probability }}%</strong></p>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Patient Data Plot" class="img-fluid mt-3">
+        </section>
+
+        <!-- Back to Home Link -->
+        <div class="mt-4 text-center">
+            <a href="{{ url_for('index') }}" class="btn btn-primary" aria-label="Make another prediction">Make Another Prediction</a>
+        </div>
+        <br>
+        <a href="/" class="back-home" aria-label="Back to home page">Back to Home</a> 
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 AI-Powered Remote Diagnostics for Rural Healthcare</p>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/4.jpeg') }}" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/5.svg') }}" alt="Twitter">
+                </a>
+                <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/6.png') }}" alt="LinkedIn">
+                </a>
+            </div>
+
+            <!-- AddThis Sharing Buttons -->
+            <div class="addthis-inline-share-buttons" aria-label="Share this page"></div>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="right-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+   </footer>
+
+    <!-- AddThis Script -->
+    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_PROFILE_ID" async="async"></script>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='diabetes.js') }}"></script>
+</body>
+</html>

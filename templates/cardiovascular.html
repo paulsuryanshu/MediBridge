@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MediBridge</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Capture.ico') }}">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='cardiovascular.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav id="navbar">
+            <div class="center-logo">
+                <a href="#home" aria-label="Go to home page" class="company-name">
+                    <img src="{{ url_for('static', filename='images/Capture.ico') }}" alt="MediBridge Logo" class="logo">
+                    <span>MediBridge</span>
+                </a>
+            </div>
+            <ul class="right-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content: Form to Enter Patient Details -->
+    <main>
+        <h2>Cardiovascular Disease Prediction</h2>
+        <form action="/predict/cardiovascular" method="post">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required><br>
+
+            <label for="sex">Sex (1=Male, 0=Female):</label>
+            <input type="number" name="sex" id="sex" required><br>
+
+            <label for="cp">Chest Pain Type (1-4):</label>
+            <input type="number" name="cp" id="cp" required><br>
+
+            <label for="trestbps">Resting BP:</label>
+            <input type="number" name="trestbps" id="trestbps" required><br>
+
+            <label for="chol">Cholesterol:</label>
+            <input type="number" name="chol" id="chol" required><br>
+
+            <label for="fbs">Fasting Blood Sugar (1=True, 0=False):</label>
+            <input type="number" name="fbs" id="fbs" required><br>
+
+            <label for="restecg">Resting ECG (0-2):</label>
+            <input type="number" name="restecg" id="restecg" required><br>
+
+            <label for="thalach">Max Heart Rate:</label>
+            <input type="number" name="thalach" id="thalach" required><br>
+
+            <label for="exang">Exercise Induced Angina (1=Yes, 0=No):</label>
+            <input type="number" name="exang" id="exang" required><br>
+
+            <label for="oldpeak">ST Depression:</label>
+            <input type="number" name="oldpeak" id="oldpeak" step="0.1" required><br>
+
+            <label for="slope">Slope (0-2):</label>
+            <input type="number" name="slope" id="slope" required><br>
+
+            <label for="ca">Major Vessels (0-3):</label>
+            <input type="number" name="ca" id="ca" required><br>
+
+            <label for="thal">Thal (3, 6, or 7):</label>
+            <input type="number" name="thal" id="thal" required><br>
+
+            <button type="submit">Predict</button>
+        </form>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 AI-Powered Remote Diagnostics for Rural Healthcare</p>
+
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/4.jpeg') }}" alt="Facebook">
+                </a>
+                <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/5.svg') }}" alt="Twitter">
+                </a>
+                <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='images/6.png') }}" alt="LinkedIn">
+                </a>
+            </div>
+
+            <!-- AddThis Sharing Buttons -->
+            <div class="addthis-inline-share-buttons" aria-label="Share this page"></div>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="right-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Optional Back to Top Button -->
+        <div class="back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- AddThis Script -->
+    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_PROFILE_ID" async="async"></script>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='cardiovascular.js') }}"></script>
+</body>
+</html>

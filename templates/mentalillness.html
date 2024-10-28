@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediBridge</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Capture.ico') }}">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='mentalillness.css') }}">
+
+    <!-- AddThis Script -->
+    <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_PROFILE_ID" async="async"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav id="navbar">
+            <div class="center-logo">
+                <a href="#home" aria-label="Go to home page" class="company-name">
+                    <img src="{{ url_for('static', filename='images/Capture.ico') }}" alt="MediBridge Logo" class="logo">
+                    <span>MediBridge</span>
+                </a>
+            </div>
+            <ul class="right-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2 class="text-center">Mental Illness Prediction</h2>
+
+        <!-- Prediction Form -->
+        <div class="container">
+            <div class="form-container">
+                <form action="/predict/mentalillness" method="post">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" class="form-control" name="age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marital_status">Marital Status (0: Single, 1: Married, 2: Divorced)</label>
+                        <input type="number" class="form-control" name="marital_status" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="education_level">Education Level (0: No High School, 1: High School, 2: College)</label>
+                        <input type="number" class="form-control" name="education_level" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="number_of_children">Number of Children</label>
+                        <input type="number" class="form-control" name="number_of_children" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="smoking_status">Smoking Status (0: Non-smoker, 1: Smoker)</label>
+                        <input type="number" class="form-control" name="smoking_status" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="physical_activity_level">Physical Activity Level (0: Low, 1: Moderate, 2: High)</label>
+                        <input type="number" class="form-control" name="physical_activity_level" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employment_status">Employment Status (0: Unemployed, 1: Employed)</label>
+                        <input type="number" class="form-control" name="employment_status" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="income">Income</label>
+                        <input type="number" class="form-control" name="income" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alcohol_consumption">Alcohol Consumption (0: No, 1: Yes)</label>
+                        <input type="number" class="form-control" name="alcohol_consumption" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dietary_habits">Dietary Habits (0: Poor, 1: Fair, 2: Good)</label>
+                        <input type="number" class="form-control" name="dietary_habits" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sleep_patterns">Sleep Patterns (0: Poor, 1: Fair, 2: Good)</label>
+                        <input type="number" class="form-control" name="sleep_patterns" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="history_of_substance_abuse">History of Substance Abuse (0: No, 1: Yes)</label>
+                        <input type="number" class="form-control" name="history_of_substance_abuse" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="family_history_of_depression">Family History of Depression (0: No, 1: Yes)</label>
+                        <input type="number" class="form-control" name="family_history_of_depression" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="chronic_medical_conditions">Chronic Medical Conditions (0: No, 1: Yes)</label>
+                        <input type="number" class="form-control" name="chronic_medical_conditions" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 AI-Powered Remote Diagnostics for Rural Healthcare</p>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/4.jpeg') }}" alt="Facebook">
+            </a>
+            <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/5.svg') }}" alt="Twitter">
+            </a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/6.png') }}" alt="LinkedIn">
+            </a>
+        </div>
+
+        <!-- AddThis Sharing Buttons -->
+        <div class="addthis-inline-share-buttons" aria-label="Share this page"></div>
+
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="right-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<!-- AddThis Script -->
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_PROFILE_ID" async="async"></script>
+
+<!-- JavaScript File -->
+<script src="{{ url_for('static', filename='diabetes.js') }}"></script>
+</body>
+</html>
+

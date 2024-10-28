@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MediBridge</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Capture.ico') }}">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='diabetes.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav id="navbar">
+            <div class="center-logo">
+                <a href="#home" aria-label="Go to home page" class="company-name">
+                    <img src="{{ url_for('static', filename='images/Capture.ico') }}" alt="MediBridge Logo" class="logo">
+                    <span>MediBridge</span>
+                </a>
+            </div>
+            <ul class="right-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <form action="/predict/diabetes" method="post">
+            <label for="pregnancies">Number of Pregnancies:</label>
+            <input type="number" name="pregnancies" min="0" required><br>
+            
+            <label for="glucose">Glucose Level:</label>
+            <input type="number" name="glucose" required><br>
+            
+            <label for="bloodpressure">Blood Pressure:</label>
+            <input type="number" name="bloodpressure" required><br>
+            
+            <label for="skinthickness">Skin Thickness:</label>
+            <input type="number" name="skinthickness" required><br>
+            
+            <label for="insulin">Insulin Level:</label>
+            <input type="number" name="insulin" required><br>
+            
+            <label for="bmi">BMI:</label>
+            <input type="number" step="0.1" name="bmi" required><br>
+            
+            <label for="diabetespedigreefunction">Diabetes Pedigree Function:</label>
+            <input type="number" step="0.01" name="diabetespedigreefunction" required><br>
+            
+            <label for="age">Age:</label>
+            <input type="number" name="age" required><br>
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+<!-- Back to Top Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 AI-Powered Remote Diagnostics for Rural Healthcare</p>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/4.jpeg') }}" alt="Facebook">
+            </a>
+            <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/5.svg') }}" alt="Twitter">
+            </a>
+            <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/6.png') }}" alt="LinkedIn">
+            </a>
+        </div>
+
+        <!-- AddThis Sharing Buttons -->
+        <div class="addthis-inline-share-buttons" aria-label="Share this page"></div>
+
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="right-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<!-- AddThis Script -->
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=YOUR_PROFILE_ID" async="async"></script>
+
+<!-- JavaScript File -->
+<script src="{{ url_for('static', filename='diabetes.js') }}"></script>
+</body>
+</html>
+

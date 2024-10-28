@@ -1,0 +1,520 @@
+:root {
+    --primary-color: #0044cc;
+    --primary-hover-color: #002266;
+    --secondary-color: #00aaff;
+    --light-color: #f5f7fa;
+    --dark-color: #333;
+    --font-size-lg: 1.8em;
+    --font-size-md: 1.2em;
+    --font-size-sm: 1em;
+    --spacing: 20px;
+    --border-radius: 8px;
+    --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --transition: 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* Name Styles */
+.name {
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #0044cc;
+    padding-bottom: 20px;
+}
+
+/* Navigation */
+header {
+    background-color: #0044cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00aaff;
+}
+
+/* Updated Logo and Company Name Styles */
+.center-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+.center-logo img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.center-logo:hover img {
+    transform: rotate(360deg);
+}
+
+.center-logo .company-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+a.company-name {
+    text-decoration: none;
+    color: white;
+}
+
+.hero-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.hero-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.hero-content .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Adjust the rest of the page below the hero section */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+
+
+/* Image Slider */
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto; /* Adds space between hero section and slider */
+    overflow: hidden;
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+    animation: fade 1.5s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    -webkit-user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Arrow hover effect */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Services Section */
+#services {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add gap between service cards */
+}
+
+/* Updated service card styling */
+.service-card {
+    background-color: #f9f9ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px; /* Increased width slightly for better readability */
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Updated shadow for more depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+    border: 1px solid #e0e0e0; /* Add a light border */
+    overflow: hidden; /* Ensures text or images don't overflow */
+}
+
+/* Ensure consistent image size and styling */
+.service-card img {
+    width: 100%;
+    height: 180px; /* Slightly reduced height */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth image hover effect */
+}
+
+/* Updated typography */
+.service-card h3 {
+    font-size: 1.6em;
+    margin: 15px 0 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+/* Add hover effects */
+.service-card:hover {
+    transform: translateY(-10px) scale(1.03); /* Added slight scaling effect */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.service-card:hover img {
+    transform: scale(1.05); /* Slight zoom effect on the image */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%; /* Cards take up most of the screen on smaller devices */
+        margin: 10px 0;
+    }
+}
+/* Remove the hyperlink style inside service cards */
+.service-card a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Inherits the color from the parent element */
+}
+
+.service-card a:hover {
+    text-decoration: none; /* Keeps it clean on hover too */
+}
+
+/* About Us Section */
+#about {
+    padding: 50px 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+#about img {
+    max-width: 50%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 50px 20px;
+    background-color: #f5f7fa;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#testimonial-text {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#testimonial-author {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-slider button {
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-slider button:hover {
+    background-color: #002266;
+}
+
+/* Contact Form */
+#contact {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#contact-form .error {
+    color: red;
+    font-size: 0.9em;
+}
+
+#contact-form button {
+    background-color: #00aaff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: center;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #0088cc;
+}
+
+/* Scroll-to-Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: #002266;
+}
+
+/* Footer */
+footer {
+    background-color: #002266;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media {
+    margin: 10px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+.right-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.right-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.right-links a:hover {
+    text-decoration: underline;
+}
+
+.back-to-top {
+    margin-top: 15px;
+}
+
+.back-to-top a {
+    color: white;
+    text-decoration: none;
+}
+
+.back-to-top a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    text-decoration: none; /* Removes underline */
+}
+
+.social-media img {
+    width: 30px; /* Adjust the size as desired */
+    height: 30px;
+    vertical-align: middle;
+}
+
+.social-media a:visited,
+.social-media a:link,
+.social-media a:hover,
+.social-media a:focus,
+.social-media a:active {
+    color: inherit; /* Prevents color change on hover */
+    outline: none;  /* Removes any focus outline */
+}
